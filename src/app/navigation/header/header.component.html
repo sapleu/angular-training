@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div>
+    <button mat-icon-button (click)="onToggleSidenav()" fxHide.gt-xs>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/">My Fitness</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="nav-items">
+      <li *ngIf="!isAuth">
+        <a routerLink="/signin">Sign In</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/signup">Sign Up</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/training">Training</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a style="cursor:pointer" (click)="onSignOut()">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
